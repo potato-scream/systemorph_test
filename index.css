@@ -1,0 +1,260 @@
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Klavika';
+  src: url('./fonts/klavikamedium-tf-webfont.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  height: 100%;
+}
+
+.body {
+  position: relative;
+  min-height: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: #ffffff;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.25;
+  color: #000000;
+  font-family: 'Klavika', sans-serif;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  max-width: 375px;
+  padding: 0 32px;
+  margin: 0 auto;
+}
+
+.main {
+  padding: 120px 0;
+}
+
+.main__title {
+  margin: 0;
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.58px;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.articles {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 311px 311px 622px 311px;
+  grid-row-gap: 32px;
+  grid-template-areas:
+    "article1"
+    "article2"
+    "article3"
+    "article4";
+}
+
+.main__articles {
+  margin-top: 48px;
+}
+
+.articles__item--first {
+  grid-area: article1;
+}
+
+.articles__item--second {
+  grid-area: article2;
+}
+
+.articles__item--third {
+  grid-area: article3;
+}
+
+.articles__item--fourth {
+  grid-area: article4;
+}
+
+.articles__link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.article {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-radius: 4px;
+  background-color: steelblue;
+  overflow: hidden;
+  height: 100%;
+  padding: 32px;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
+}
+
+.article--first {
+  background-image: url("img/background1.jpg");
+}
+
+.article--second {
+  color: #ffffff;
+  background-image: url("img/background.jpg");
+}
+
+.article--third {
+  background-image: url("img/building.jpg");
+  color: #ffffff;
+}
+
+.article--fourth {
+  background-image: url("img/lake.jpg");
+  background-size: unset;
+}
+
+.article__info {
+  margin: 0;
+  margin-bottom: 8px;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  line-height: 1.42;
+  letter-spacing: 0.29px;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.article__title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.25;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.main__link {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  margin-top: 56px;
+  font-family: 'Open Sans';
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 2;
+  letter-spacing: 0.2px;
+  text-align: right;
+  color: #009cde;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.main__link-icon {
+  margin-left: 8px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding: 0 40px;
+  }
+
+  .articles {
+    grid-template-columns: repeat(2, 328px);
+    grid-template-rows: repeat(3, 328px);
+    grid-row-gap: 32px;
+    grid-column-gap: 32px;
+    grid-template-areas:
+      "article1 article1"
+      "article2 article3"
+      "article4 article3";
+  }
+
+  .main__title {
+    font-size: 48px;
+    line-height: 1.17;
+    letter-spacing: 0.77px;
+  }
+
+  .main__articles {
+    margin-top: 64px;
+  }
+
+  .article--horisontal .article__title {
+    width: 50%;
+  }
+
+  .article__info {
+    font-size: 14px;
+    line-height: 1.36;
+    letter-spacing: 0.34px;
+  }
+
+  .article__title {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1.14;
+  }
+
+  .main__link {
+    margin-top: 64px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 2;
+    letter-spacing: 0.2px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1110px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .articles {
+    grid-template-columns: repeat(3, 350px);
+    grid-template-rows: repeat(2, 350px);
+    grid-row-gap: 30px;
+    grid-column-gap: 30px;
+    grid-template-areas:
+      "article1 article1 article3"
+      "article2 article4 article3";
+  }
+
+  .main__articles {
+    margin-top: 64px;
+  }
+
+  .article__info {
+    font-size: 14px;
+    line-height: 1.36;
+    letter-spacing: 0.34px;
+  }
+
+  .article__title {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1.14;
+  }
+
+  .main__link {
+    margin-top: 64px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 2;
+    letter-spacing: 0.2px;
+  }
+}
